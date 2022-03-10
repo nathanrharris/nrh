@@ -1,0 +1,16 @@
+name: nrh
+recipe: drupal9
+config:
+  webroot: web
+services:
+  database:
+    creds:
+      user: drupal
+      password: drupal
+      database: drupal
+  appserver:
+    build:
+      - "composer require drush/drush"
+events:
+  post-start:
+    - appserver: "drush site:install --db-url=mysql://drupal:drupal@database:3306/drupal -y"
