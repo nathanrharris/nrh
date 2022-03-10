@@ -42,6 +42,9 @@
 /web/index.php
 /web/LICENSE.txt
 /web/README.txt
+/web/README.md
+/web/INSTALL.txt
+/web/.ht.router.php
 /web/robots.txt
 /web/update.php
 /web/web.config
