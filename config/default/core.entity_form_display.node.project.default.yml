@@ -11,14 +11,18 @@ dependencies:
     - field.field.node.project.field_featured
     - field.field.node.project.field_project_description
     - field.field.node.project.field_role
+    - field.field.node.project.field_screenshot
     - field.field.node.project.field_short_title
     - field.field.node.project.field_tasks
     - field.field.node.project.field_team
     - field.field.node.project.field_technology
     - field.field.node.project.field_url
+    - field.field.node.project.field_weight
+    - image.style.thumbnail
     - node.type.project
   module:
     - color_field
+    - image
     - path
     - text
 id: node.project.default
@@ -93,6 +97,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_screenshot:
+    type: image_image
+    weight: 32
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   field_short_title:
     type: string_textfield
     weight: 26
@@ -133,6 +145,13 @@ content:
     region: content
     settings:
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight:
+    type: number
+    weight: 33
+    region: content
+    settings:
       placeholder: ''
     third_party_settings: {  }
   path:

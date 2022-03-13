@@ -12,11 +12,13 @@ dependencies:
     - field.field.node.project.field_featured
     - field.field.node.project.field_project_description
     - field.field.node.project.field_role
+    - field.field.node.project.field_screenshot
     - field.field.node.project.field_short_title
     - field.field.node.project.field_tasks
     - field.field.node.project.field_team
     - field.field.node.project.field_technology
     - field.field.node.project.field_url
+    - field.field.node.project.field_weight
     - node.type.project
   module:
     - text
@@ -47,8 +49,10 @@ hidden:
   field_featured: true
   field_project_description: true
   field_role: true
+  field_screenshot: true
   field_short_title: true
   field_tasks: true
   field_team: true
   field_technology: true
   field_url: true
+  field_weight: true

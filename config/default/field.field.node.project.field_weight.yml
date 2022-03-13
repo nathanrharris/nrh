@@ -1,0 +1,23 @@
+uuid: 57002202-4503-4472-a8dd-cb2b96befc3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.project
+id: node.project.field_weight
+field_name: field_weight
+entity_type: node
+bundle: project
+label: Weight
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: -1000
+  max: 1000
+  prefix: ''
+  suffix: ''
+field_type: integer

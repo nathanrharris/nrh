@@ -1,0 +1,29 @@
+uuid: 2971bbfa-9951-4dac-8150-f0ca2a27e590
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_skill_group
+    - node.type.skills
+    - taxonomy.vocabulary.skill_group
+id: node.skills.field_skill_group
+field_name: field_skill_group
+entity_type: node
+bundle: skills
+label: 'Skill Group'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      skill_group: skill_group
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
