@@ -1,0 +1,23 @@
+uuid: 818521bd-8377-4d25-8c84-421c55e20d9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_direct
+    - node.type.project
+id: node.project.field_direct
+field_name: field_direct
+entity_type: node
+bundle: project
+label: Direct
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

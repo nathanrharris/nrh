@@ -1,0 +1,21 @@
+uuid: d7a21f44-76d0-4070-90a0-115cb08d39a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contractor
+    - node.type.project
+id: node.project.field_contractor
+field_name: field_contractor
+entity_type: node
+bundle: project
+label: contractor
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

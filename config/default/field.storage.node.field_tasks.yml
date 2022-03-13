@@ -1,0 +1,20 @@
+uuid: 68dc36ab-1a95-4a3e-a0c1-46b8eafd6088
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_tasks
+field_name: field_tasks
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,27 @@
+uuid: 18089ba1-1deb-4ee1-a0d1-970413a92719
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tasks
+    - node.type.project
+id: node.project.field_tasks
+field_name: field_tasks
+entity_type: node
+bundle: project
+label: Tasks
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles: {  }
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

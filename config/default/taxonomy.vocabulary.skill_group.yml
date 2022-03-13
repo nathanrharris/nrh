@@ -1,0 +1,8 @@
+uuid: 771b2fe7-1d84-4c9c-8fb2-be5c0b7ed095
+langcode: en
+status: true
+dependencies: {  }
+name: 'Skill Group'
+vid: skill_group
+description: ''
+weight: 0
