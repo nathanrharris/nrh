@@ -1,0 +1,5 @@
+name: NRH Migration
+description: NRH Drush migration commands.
+core_version_requirement: 9.x
+type: module
+package: NRH

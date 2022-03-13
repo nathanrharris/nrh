@@ -1,0 +1,5 @@
+services:
+  nrh_migration.commands:
+    class: \Drupal\nrh_migration\Commands\NrhMigrationCommands
+    tags:
+      - { name: drush.command }

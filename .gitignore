@@ -48,3 +48,5 @@
 /web/robots.txt
 /web/update.php
 /web/web.config
+/wp-content
+/web/modules/contrib
