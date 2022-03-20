@@ -123,12 +123,9 @@ class NrhMigrationCommands extends DrushCommands {
 
         $path = str_replace('http://www.nathanrharris.com', '/app', $screenshot_data[0]->guid);
         $path = str_replace('http://portfolio.local', '/app', $path);
+        $path = str_replace('http://local.nathanrharris', '/app', $path);
 
         $filename = preg_replace('/.*\//', '', $path);
-
-        $this->writeLn($path); 
-        $this->writeLn($filename); 
-        $this->writeLn('----------');
 
         $data = file_get_contents($path);
 
@@ -251,10 +248,10 @@ class NrhMigrationCommands extends DrushCommands {
   }
 
  /**
-  * @command nrh_migration:files-clean
-  * @aliases nrh-files-clean
+  * @command nrh_migration:files-clear
+  * @aliases nrh-files-clear
   */
-  public function clean_files() {
+  public function clear_files() {
     $this->writeLn('Cleaning files');
 
     $files = \Drupal\file\Entity\File::loadMultiple();
@@ -266,7 +263,138 @@ class NrhMigrationCommands extends DrushCommands {
       $f->delete();
     }
   }
+ 
+ /**
+  * @command nrh_migration:skills
+  * @aliases nrh-skills
+  */
+  public function migrate_skills() {
 
+    \Drupal\Core\Database\Database::setActiveConnection('wp');
+
+    $db = \Drupal\Core\Database\Database::getConnection();
+
+    $query = $db->select('wp_posts', 'w');
+
+    $query->fields('w', ['ID', 'post_title', 'menu_order']);
+    
+    $query->condition('post_type', 'skill');
+
+    $results = $query->execute()->fetchAll();
+
+    $projects = [];
+
+    foreach ($results as $r) {
+      $this->writeLn('Loading: ' . $r->post_title); 
+      
+      $skills[$r->ID] = [
+        'type' => 'skills',
+        'title' => $r->post_title,
+        'field_weight' => (60 - $r->menu_order),
+      ];
+
+      $query_tax = $db->select('wp_term_relationships', 'r');
+      
+      $query_tax->join('wp_terms', 't', 't.term_id = r.term_taxonomy_id');
+
+      $query_tax->fields('r', ['term_taxonomy_id']);
+      
+      $query_tax->fields('t', ['name']);
+
+      $query_tax->condition('object_id', $r->ID);
+
+      $query_tax->orderBy('t.term_order');
+
+      $terms = $query_tax->execute()->fetchAll();
+
+      $tax_fields = [
+        'field_skill_group' => 'skill_group',
+      ];
+
+      foreach ($tax_fields as $tf => $tf_vocab) {
+        $terms_list = [];
+
+        foreach ($terms as $t) {
+          if ($tid = $this->findTerm($t->name, $tf_vocab)) {
+            $terms_list[] = $tid; 
+          }
+        }
+
+        $skills[$r->ID][$tf] = array_unique($terms_list);
+      }
+
+      $query_meta = $db->select('wp_postmeta', 'm');
+
+      $query_meta->fields('m', ['meta_key', 'meta_value']);
+
+      $query_meta->condition('post_id', $r->ID);
+
+      $meta_data = $query_meta->execute()->fetchAll();
+
+      foreach ($meta_data as $md) {
+        if (preg_match('/^icon/', $md->meta_key)) {
+          if ($md->meta_value) {
+            $icon_id = $md->meta_value;
+          }
+        }
+      }
+
+      $query_icon = $db->select('wp_posts', 'w');
+
+      $query_icon->fields('w', ['guid']);
+
+      $query_icon->condition('ID', $icon_id);
+
+      $icon_data = $query_icon->execute()->fetchAll();
+
+      $path = str_replace('http://www.nathanrharris.com', '/app', $icon_data[0]->guid);
+      $path = str_replace('http://portfolio.local', '/app', $path);
+      $path = str_replace('http://local.nathanrharris', '/app', $path);
+
+      $filename = preg_replace('/.*\//', '', $path);
+
+      $data = file_get_contents($path);
+
+      $file = file_save_data($data, "public://$filename", 1);
+
+      $skills[$r->ID]['field_icon'][] = $file->id();
+    }
+
+    \Drupal\Core\Database\Database::setActiveConnection();
+
+    foreach ($skills as $s) {
+
+      $node = \Drupal\node\Entity\Node::create($s);
+
+      $node->save();
+      
+      $this->writeLn('Writing: ' . $s['title']); 
+    }
+  }
+ 
+ /**
+  * @command nrh_migration:skill-clear
+  * @aliases nrh-skill-clear
+  */
+  public function clear_skills() {
+    $db = \Drupal\Core\Database\Database::getConnection();
+  
+    $query = $db->select('node_field_data', 'n');
+
+    $query->fields('n', ['nid', 'title']);
+    
+    $query->condition('type', 'skill');
+
+    $results = $query->execute()->fetchAll();
+
+    foreach ($results as $r) {
+      $this->writeLn('Deleting: ' . $r->title);
+
+      $node = \Drupal\node\Entity\Node::load($r->nid);
+
+      $node->delete();
+    }
+  }
 
   public function findTerm($name, $vocab) {
     $term = \Drupal::entityTypeManager()
