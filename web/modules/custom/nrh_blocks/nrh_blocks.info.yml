@@ -1,0 +1,5 @@
+name: NRH Blocks
+description: NRH block.
+core_version_requirement: 9.x
+type: module
+package: NRH

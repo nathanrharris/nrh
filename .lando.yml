@@ -2,6 +2,7 @@ name: nrh
 recipe: drupal9
 config:
   webroot: web
+  php: '8.0'
 services:
   database:
     creds:

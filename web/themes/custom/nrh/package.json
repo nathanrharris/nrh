@@ -1,0 +1,16 @@
+{
+  "name": "nrh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w src/ -o css/ --recursive",
+    "livereload": "livereload -w 100 -d"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "livereload": "^0.9.3",
+    "node-sass": "^7.0.1"
+  }
+}
