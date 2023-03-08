@@ -1,0 +1,22 @@
+uuid: a31a5157-8721-4478-80e8-b5bc541de921
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nrh
+_core:
+  default_config_hash: KC12e0aosUnBBs5bd374JVcQjJaFNOSIHzu0dUGf22o
+id: nrh_messages
+theme: nrh
+region: content
+weight: 1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

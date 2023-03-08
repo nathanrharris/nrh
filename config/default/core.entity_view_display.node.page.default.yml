@@ -4,10 +4,65 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_body_links
+    - field.field.node.page.layout_builder__layout
     - node.type.page
   module:
+    - layout_builder
+    - layout_discovery
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          ff436b3b-3722-461d-bd91-8517b5b46e58:
+            uuid: ff436b3b-3722-461d-bd91-8517b5b46e58
+            region: content
+            configuration:
+              id: 'field_block:node:page:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          0edd18fe-5347-4822-85fe-d7923e3938a4:
+            uuid: 0edd18fe-5347-4822-85fe-d7923e3938a4
+            region: content
+            configuration:
+              id: 'extra_field_block:node:page:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
+            additional: {  }
+          1badcf43-0b92-426c-8c69-21dbd67422d7:
+            uuid: 1badcf43-0b92-426c-8c69-21dbd67422d7
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_body_links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
 id: node.page.default
@@ -22,7 +77,17 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  field_body_links:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 101
     region: content
-hidden: {  }
+hidden:
+  layout_builder__layout: true

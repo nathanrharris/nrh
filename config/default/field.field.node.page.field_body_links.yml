@@ -1,0 +1,21 @@
+uuid: b7e8fe43-8a3e-44c0-8687-04f20936e3ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body_links
+    - node.type.page
+  module:
+    - text
+id: node.page.field_body_links
+field_name: field_body_links
+entity_type: node
+bundle: page
+label: 'Body Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

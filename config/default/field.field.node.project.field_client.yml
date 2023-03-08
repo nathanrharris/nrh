@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_client
     - node.type.project
-    - taxonomy.vocabulary.client
 id: node.project.field_client
 field_name: field_client
 entity_type: node
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      client: client
+    target_bundles: {  }
     sort:
       field: name
       direction: asc

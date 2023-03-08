@@ -14,3 +14,10 @@ services:
       - "composer require drush/drush"
     run:
       - "drush site:install --db-url=mysql://drupal:drupal@database:3306/drupal -y"
+  import_source_db:
+    type: mysql:5.7
+    portforward: true
+    creds:
+      user: import_source
+      password: import_source
+      database: import_source

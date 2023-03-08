@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_skill_group
     - node.type.skills
-    - taxonomy.vocabulary.skill_group
 id: node.skills.field_skill_group
 field_name: field_skill_group
 entity_type: node
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      skill_group: skill_group
+    target_bundles: {  }
     sort:
       field: name
       direction: asc

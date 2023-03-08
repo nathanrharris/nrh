@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_technology
     - node.type.project
-    - taxonomy.vocabulary.technology
 id: node.project.field_technology
 field_name: field_technology
 entity_type: node
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      technology: technology
+    target_bundles: {  }
     sort:
       field: name
       direction: asc
