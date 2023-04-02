@@ -17,9 +17,9 @@
     "require": {
         "composer/installers": "^1.9",
         "drupal/color_field": "^2.5",
-        "drupal/core-composer-scaffold": "^9.3",
-        "drupal/core-project-message": "^9.3",
-        "drupal/core-recommended": "^9.3",
+        "drupal/core-composer-scaffold": "^9.5",
+        "drupal/core-project-message": "^9.5",
+        "drupal/core-recommended": "^9.5",
         "drupal/gin": "dev-3.x",
         "drupal/gin_toolbar": "dev-1.x",
         "drupal/layout_builder_styles": "1.x-dev",
