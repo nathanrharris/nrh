@@ -1,0 +1,79 @@
+#icons-front {
+
+  .icon-home { background-image: url(../images/icon-home-bg.png); }
+  .icon-portfolio { background-image: url(../images/icon-work-bg.png); }
+  .icon-hire { background-image: url(../images/icon-skills-bg.png); }
+  .icon-skills { background-image: url(../images/icon-hire-bg.png); }
+
+  position: absolute;
+  top: calc(100vh - 550px);
+  margin-top: -40px;
+  margin-left: -485px;
+  width: 970px;
+  height: 90px;
+  left: 50%;
+  z-index: 5;
+ 
+  .icon-wrapper {
+    width: calc(25% - 100px);
+    text-align: center;
+    
+    float: left;
+
+    &:nth-child(4), &:nth-child(5) {
+      float: right;
+    }
+  }
+
+  .icon {
+    display: block;
+    height: 100px;
+    width: 100px;
+    opacity: 1;
+    margin-left: 20px;
+    margin-top: 0px;
+    cursor: pointer;
+    background-size: contain;
+  }
+
+  h1.title {
+    background-image: url(../images/banner-background-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    margin-top: -55px;
+    padding-top: 55px;
+    width: 400px;
+    height: 220px;
+    font-size: 72px;
+    line-height: 48px;
+
+    float: left;
+    margin-left: 0px;
+    margin-right: 0px;
+
+    text-align: center;
+
+    font-family: 'FantasticParty';
+
+    letter-spacing: 5px;
+
+
+
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 140px;
+    width: 260px;
+    padding-top: 35px;
+    margin-top: -55px;
+    padding-top: 55px;
+    width: 400px;
+    height: 220px;
+    font-size: 72px;
+    line-height: 48px;
+  }
+
+}
+

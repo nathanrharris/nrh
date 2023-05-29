@@ -56,6 +56,7 @@
   bottom: 25px;
   width: 90vw;
   margin-left: 5vw;
+  overflow: hidden;
   background-color: transparent;
   background-size: 100% 100%;
   background-image: url("../images/portfolio-bg.jpg"); }
@@ -209,3 +210,25 @@
   width: 100%; }
   .front-section-intro > div {
     padding-top: 125px; }
+
+#block-nrh-local-tasks {
+  border-bottom: 1px solid #DDD; }
+  #block-nrh-local-tasks .tabs {
+    margin-bottom: 0; }
+    #block-nrh-local-tasks .tabs li, #block-nrh-local-tasks .tabs li.is-actve {
+      background: #AAA;
+      border-radius: 6px 6px 0 0;
+      padding: 4px;
+      margin-right: 0; }
+    #block-nrh-local-tasks .tabs li.is-active, #block-nrh-local-tasks .tabs li a:hover, #block-nrh-local-tasks .tabs li:hover {
+      background: #DDD; }
+    #block-nrh-local-tasks .tabs li.is-active a {
+      background: transparent;
+      color: red; }
+    #block-nrh-local-tasks .tabs li a {
+      font-weight: bold;
+      color: #333; }
+
+#block-nrh-tools {
+  background: white;
+  padding: 12px; }

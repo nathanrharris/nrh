@@ -30,7 +30,7 @@
           $('.path-frontpage .pane-code-1').css('background-position-y', (pos1 + 1) + 'px');
           $('.path-frontpage .pane-code-2').css('background-position-y', (pos2 + 2) + 'px');
           $('.path-frontpage .pane-code-3').css('background-position-y', (pos3 + 3) + 'px');
-        }, 50);
+        }, 100);
       }
 
       function scroll_handler() {

@@ -2,7 +2,7 @@ _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: en
 uuid: d9542488-edb3-4150-a84e-19a633e9e398
-name: 'Nathan Harris Portfolio'
+name: 'Drush Site-Install'
 mail: admin@example.com
 slogan: ''
 page:

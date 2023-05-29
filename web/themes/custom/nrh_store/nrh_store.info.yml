@@ -1,0 +1,11 @@
+name: NRH
+type: theme
+description: 'Nathan R Harris portfolio theme.'
+core_version_requirement: ^8 || ^9
+libraries:
+  - nrh/global
+base theme: classy
+regions:
+  header: 'Header'
+  content: 'Content'
+  footer: 'Footer'

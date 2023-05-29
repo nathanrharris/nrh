@@ -29,6 +29,7 @@ module:
   link: 0
   menu_link_content: 0
   menu_ui: 0
+  mysql: 0
   node: 0
   nrh_blocks: 0
   nrh_migration: 0
@@ -42,11 +43,13 @@ module:
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   tour: 0
   update: 0
   user: 0
   views_ui: 0
+  pathauto: 1
   views: 10
   standard: 1000
 theme:
@@ -55,4 +58,5 @@ theme:
   stable: 0
   classy: 0
   nrh: 0
+  claro: 0
 profile: standard

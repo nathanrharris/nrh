@@ -23,7 +23,8 @@
         "drupal/gin": "dev-3.x",
         "drupal/gin_toolbar": "dev-1.x",
         "drupal/layout_builder_styles": "1.x-dev",
-        "drush/drush": "^11.2"
+        "drupal/pathauto": "^1.11",
+        "drush/drush": "^11.5"
     },
     "conflict": {
         "drupal/drupal": "*"

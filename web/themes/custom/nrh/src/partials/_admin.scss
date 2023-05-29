@@ -1,0 +1,33 @@
+#block-nrh-local-tasks {
+  border-bottom: 1px solid #DDD;
+
+  .tabs {
+    margin-bottom: 0;
+
+    li, li.is-actve {
+      background: #AAA;
+      border-radius: 6px 6px 0 0;
+      padding: 4px;
+      margin-right: 0;
+    }
+    
+    li.is-active, li a:hover, li:hover {
+      background: #DDD;
+    }
+
+    li.is-active a {
+      background: transparent;
+      color: red;
+    }
+
+    li a {
+      font-weight: bold;
+      color: #333;
+    }
+  }
+}
+
+#block-nrh-tools {
+  background: white;
+  padding: 12px;
+}

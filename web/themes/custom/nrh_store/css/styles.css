@@ -1,0 +1,211 @@
+@font-face {
+  font-family: FantasticParty;
+  src: local("fantastic"), url(../fonts/fantastic.ttf);
+  font-weight: normal; }
+
+@font-face {
+  font-family: Boogaloo;
+  src: local("boogaloo"), url(../fonts/boogaloo.ttf);
+  font-weight: normal; }
+
+.pane-code-3 {
+  background-image: url("../images/code-blur.png");
+  overflow: auto;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-color: black; }
+  .pane-code-3 .pane-code-2 {
+    background-image: url("../images/code-bw.png");
+    overflow: auto;
+    height: 100%;
+    background-position-x: 20%; }
+    .pane-code-3 .pane-code-2 .pane-code-1 {
+      background-image: url("../images/code-top.png");
+      overflow: auto;
+      height: 100%;
+      width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      background-repeat: repeat-y; }
+
+.pane {
+  height: 150vh;
+  position: relative; }
+  .pane .pane-wrapper {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0; }
+    .pane .pane-wrapper .pane-content {
+      height: calc(100vh - 120px);
+      width: 100%;
+      background-color: #FFF;
+      position: absolute;
+      bottom: 0px;
+      padding-top: 100px; }
+
+#pane-portfolio-content,
+#pane-skills-content,
+#pane-hire-content {
+  height: calc(100vh - 145px);
+  bottom: 25px;
+  width: 90vw;
+  margin-left: 5vw;
+  background-color: transparent;
+  background-size: 100% 100%;
+  background-image: url("../images/portfolio-bg.jpg"); }
+  @media (min-width: 1333px) {
+    #pane-portfolio-content,
+    #pane-skills-content,
+    #pane-hire-content {
+      max-width: 1200px;
+      margin-left: calc(50vw - 600px); } }
+
+#pane-portfolio-overlay {
+  background-image: url("../images/portfolio-overlay.png");
+  background-size: 100% auto;
+  height: 100%;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-position: bottom; }
+
+#pane-skills-overlay {
+  background-image: url("../images/skills-overlay.png");
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%; }
+
+#pane-hire-overlay {
+  background-image: url("../images/hire-overlay.png");
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%; }
+  #pane-hire-overlay .container {
+    width: 100% !important; }
+  #pane-hire-overlay .pane-hire-bg {
+    background-image: url(../images/front-hire-bg.png);
+    background-size: 100% 100%;
+    height: 650px;
+    padding: 25px;
+    /*
+    @include breakpoint($screen-md) {
+      height: 620px;
+    }
+    */ }
+
+#pane-skills-content {
+  padding-top: 0px;
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1); }
+  #pane-skills-content #pane-skills-overlay {
+    padding-top: 100px;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1); }
+
+#pane-hire-content {
+  padding-top: 0px;
+  -webkit-transform: scaleY(-1);
+  -moz-transform: scaleY(-1);
+  -ms-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  transform: scaleY(-1); }
+  #pane-hire-content .container {
+    position: absolute;
+    bottom: 100px;
+    -webkit-transform: scaleY(-1);
+    -moz-transform: scaleY(-1);
+    -ms-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1); }
+
+#icons-front {
+  position: absolute;
+  top: calc(100vh - 550px);
+  margin-top: -40px;
+  margin-left: -485px;
+  width: 970px;
+  height: 90px;
+  left: 50%;
+  z-index: 5; }
+  #icons-front .icon-home {
+    background-image: url(../images/icon-home-bg.png); }
+  #icons-front .icon-portfolio {
+    background-image: url(../images/icon-work-bg.png); }
+  #icons-front .icon-hire {
+    background-image: url(../images/icon-skills-bg.png); }
+  #icons-front .icon-skills {
+    background-image: url(../images/icon-hire-bg.png); }
+  #icons-front .icon-wrapper {
+    width: calc(25% - 100px);
+    text-align: center;
+    float: left; }
+    #icons-front .icon-wrapper:nth-child(4), #icons-front .icon-wrapper:nth-child(5) {
+      float: right; }
+  #icons-front .icon {
+    display: block;
+    height: 100px;
+    width: 100px;
+    opacity: 1;
+    margin-left: 20px;
+    margin-top: 0px;
+    cursor: pointer;
+    background-size: contain; }
+  #icons-front h1.title {
+    background-image: url(../images/banner-background-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: -55px;
+    padding-top: 55px;
+    width: 400px;
+    height: 220px;
+    font-size: 72px;
+    line-height: 48px;
+    float: left;
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
+    font-family: 'FantasticParty';
+    letter-spacing: 5px;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 140px;
+    width: 260px;
+    padding-top: 35px;
+    margin-top: -55px;
+    padding-top: 55px;
+    width: 400px;
+    height: 220px;
+    font-size: 72px;
+    line-height: 48px; }
+
+#video-front {
+  width: 100%;
+  height: 100%;
+  margin-left: 0px;
+  margin-top: -70px;
+  border: 3px solid blue; }
+
+.front-section-intro {
+  background-color: white;
+  background-image: url("../images/home-about-bg.jpg");
+  height: 550px;
+  top: calc(100vh - 553px);
+  position: absolute;
+  border-top: 3px solid black;
+  background-size: 100% 100%;
+  width: 100%; }
+  .front-section-intro > div {
+    padding-top: 125px; }

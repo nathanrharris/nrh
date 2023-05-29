@@ -62,6 +62,8 @@ background-color: black;
   width: 90vw;
   margin-left: 5vw;
 
+  overflow: hidden;
+
   @media (min-width: 1333px) {
     max-width: 1200px;
     margin-left: calc(50vw - 600px);
